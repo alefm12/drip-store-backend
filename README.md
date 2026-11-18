@@ -5,6 +5,12 @@ seguindo o escopo de [digitalcollegebr/projeto-backend](https://github.com/digit
 
 **Desenvolvido por:** ALEF MATHEUS TEIXEIRA DE SOUSA
 
+**API publicada:** https://drip-store-backend-mu.vercel.app
+
+**Documentação (Swagger):** https://drip-store-backend-mu.vercel.app/docs
+
+**Front-end que consome a API:** https://drip-store-frontend-xi.vercel.app
+
 ## Tecnologias
 
 | Uso | Tecnologia |
