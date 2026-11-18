@@ -133,3 +133,20 @@ curl -X POST http://localhost:3000/v1/category \
   item sem `id` é criado. Tudo dentro de uma transação.
 - **Senha** nunca é retornada (default scope do model exclui a coluna).
 - **Índices** em `products.slug`, `products.price` e `product_categories.category_id` para as buscas.
+
+## Deploy (Vercel + MySQL na nuvem)
+
+O projeto já está pronto para rodar como função serverless na Vercel (`api/index.js` + `vercel.json`).
+
+1. Crie um banco MySQL gratuito na nuvem (ex.: [Aiven](https://aiven.io/free-mysql-database)).
+2. Rode as migrations e o seed apontando para ele (com as variáveis do banco no `.env`):
+   ```bash
+   npm run db:migrate:prod
+   npm run db:seed:prod
+   ```
+3. Na Vercel, importe o repositório e configure as variáveis:
+   `NODE_ENV=production`, `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASS`, `DB_NAME`, `DB_SSL=true`,
+   `JWT_SECRET`, `UPLOAD_DIR=/tmp`.
+
+> Na Vercel o disco é temporário: imagens enviadas por upload ficam disponíveis apenas enquanto a função estiver ativa.
+> As imagens do seed vêm junto com o projeto e funcionam sempre.

@@ -32,6 +32,9 @@ module.exports = {
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
+    // bancos MySQL na nuvem (Aiven, TiDB, etc.) exigem conexão SSL
+    dialectOptions: process.env.DB_SSL === 'true' ? { ssl: { rejectUnauthorized: false } } : {},
+    pool: { max: 3, min: 0, idle: 10000 },
   },
   test: {
     ...common,

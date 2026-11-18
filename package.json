@@ -13,7 +13,9 @@
     "db:create": "sequelize-cli db:create",
     "db:migrate": "sequelize-cli db:migrate",
     "db:seed": "sequelize-cli db:seed:all",
-    "db:reset": "sequelize-cli db:migrate:undo:all && sequelize-cli db:migrate && sequelize-cli db:seed:all"
+    "db:reset": "sequelize-cli db:migrate:undo:all && sequelize-cli db:migrate && sequelize-cli db:seed:all",
+    "db:migrate:prod": "sequelize-cli db:migrate --env production",
+    "db:seed:prod": "sequelize-cli db:seed:all --env production"
   },
   "author": "",
   "license": "MIT",
@@ -26,8 +28,7 @@
     "jsonwebtoken": "^9.0.3",
     "mysql2": "^3.24.6",
     "qs": "^6.17.1",
-    "sequelize": "^6.37.8",
-    "swagger-ui-express": "^5.0.1"
+    "sequelize": "^6.37.8"
   },
   "devDependencies": {
     "jest": "^30.5.2",
