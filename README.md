@@ -3,7 +3,7 @@
 API REST da loja **Drip Store**, desenvolvida para o projeto final de Back-end da Digital College,
 seguindo o escopo de [digitalcollegebr/projeto-backend](https://github.com/digitalcollegebr/projeto-backend).
 
-**Equipe:** _[nome completo de cada integrante]_
+**Desenvolvido por:** ALEF MATHEUS TEIXEIRA DE SOUSA
 
 ## Tecnologias
 
