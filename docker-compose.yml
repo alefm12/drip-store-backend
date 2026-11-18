@@ -1,0 +1,14 @@
+# Sobe um MySQL 8 pronto para o projeto: docker compose up -d
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: drip-store-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: drip_store
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
