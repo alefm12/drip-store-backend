@@ -14,10 +14,14 @@ const common = {
   logging: false,
 };
 
+// require explícito do driver: o Sequelize carrega o mysql2 de forma dinâmica e,
+// em hospedagem serverless (Vercel), o empacotador não incluiria o pacote no deploy.
+const mysql = { dialect: 'mysql', dialectModule: require('mysql2') };
+
 module.exports = {
   development: {
     ...common,
-    dialect: 'mysql',
+    ...mysql,
     host: process.env.DB_HOST || '127.0.0.1',
     port: Number(process.env.DB_PORT) || 3306,
     username: process.env.DB_USER || 'root',
@@ -26,7 +30,7 @@ module.exports = {
   },
   production: {
     ...common,
-    dialect: 'mysql',
+    ...mysql,
     host: process.env.DB_HOST,
     port: Number(process.env.DB_PORT) || 3306,
     username: process.env.DB_USER,
